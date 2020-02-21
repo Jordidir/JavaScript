@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 3 del 5 Marzo</title>
+	<script type="text/javascript">
+		function almacenar(evento) {
+			var identificador = evento.target.name;
+			switch (identificador) {
+				case 'Austrias':
+				sessionStorage.setItem("visita",identificador);
+				break;
+				case 'Moderno':
+				sessionStorage.setItem("visita",identificador);
+				break;
+				case 'Museos':
+				sessionStorage.setItem("visita",identificador);
+				break;
+			}
+		}
+
+		function configurar() {
+			var opciones = document.getElementsByClassName('Turismo');
+				for (i = 0; i < opciones.length; i++) {
+					opciones[i].addEventListener("click",almacenar,false);
+				}
+		}
+	</script>
+</head>
+<body onload="configurar()";>
+	<p align="center"> OBJETO DOCUMENTO</p>
+	<p align="center">
+		Opcion 1 <a href="Index2.html" class="Turismo" name="Austrias" id="1"> Visita de la ruta de los Austrias</a><br><br>
+		Opcion 2 <a href="Index2.html" class="Turismo" name="Moderno" id="2"> Visita del Madrid Moderno</a><br><br>
+		Opcion 3 <a href="Index2.html" class="Turismo" name="Museos" id="3"> Visita de los museos</a><br><br>
+	</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola</title>
+	<script type="text/javascript">
+		var veces = 0;
+		function mostrarInfo(evento) {
+			veces++;
+			var caja = document.getElementById("cajaTexto");
+			caja.value = veces;
+		}
+		function asignarEvento(evento) {
+			if (document.readyState == 'complete') {
+				console.log("documento cargado al 100%");
+				document.getElementById('boton1').addEventListener('click', mostrarInfo, false);
+			}
+		}
+		document.addEventListener('readyStateChange')
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

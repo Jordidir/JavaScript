@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Botones dinamicos</title>
+</head>
+<body onload="inicio()">
+	<script type="text/javascript">
+		function funcionar() {
+			/*var parrafo1 = document.createElement("p");
+			var nuevotexto = createTextNode("Parrafo nuevo en body");
+			alert(nuevotexto);
+			parrafo1.appendChild(nuevotexto);
+			document.body.appendChild(parrafo1);*/
+			var radioInput = document.createElement('input');
+			radioInput.setAttribute('type', 'radio');
+			radioInput.setAttribute('name', 'opciones');
+			radioInput.setAttribute('id', 'primero');
+
+			var texto = document.createTextNode("Primera opcion");
+			radioInput.appendChild(texto);
+			document.body.appendChild(radioInput);
+
+			document.body.appendChild(texto);
+			var texto = document.createTextNode("br");
+			document.body.appendChild(salto);
+			
+			var radioInput1 = 
+		}
+	</script>
+</body>
+</html>

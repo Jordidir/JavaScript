@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gimnasio</title>
+	<script type="text/javascript">
+		function gym() {
+			var body = document.getElementsByTagName("body")[0];
+			var tabla = document.createElement("table");
+			var contenido = document.createElement("tbody");
+			var cadena = ["Abierto 24h", "Solo mujeres", "Clases Colectivas", "Nuevo Gimnasio", "Artes Marciales", "Pilates"];
+			var m = 0;
+
+			for (var i = 0; i < 3; i++) {
+				var fila = document.createElement("tr");
+				for (var j = 0; j < 2; j++) {
+					var columna = document.createElement("td");
+					var textoColumna = document.createTextNode(cadena[m]);
+					var check = document.createElement("input");
+					var atributo = document.createAttribute("type");
+					atributo.value = "checkbox";
+					check.setAttributeNode(atributo);
+					columna.appendChild(check);
+					columna.appendChild(textoColumna);
+      				fila.appendChild(columna);
+      				m++;
+				}
+				contenido.appendChild(fila);
+			}
+			tabla.appendChild(contenido);
+			body.appendChild(tabla);
+			tabla.setAttribute("border", "2");
+		}
+
+	</script>
+</head>
+<body onload="gym()">
+	
+</body>
+</html>

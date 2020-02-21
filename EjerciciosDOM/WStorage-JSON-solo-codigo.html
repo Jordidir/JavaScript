@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Uso Web Storage con JSON</title>
+		
+</head>
+<body>
+	<form>
+		<div>
+			<label>Nombre:</label>
+			<div><input type="text" /></div>
+		</div>
+		<div>
+			<label>Apellidos:</label>
+			<div><input type="text" /></div>
+		</div>
+		<div>
+			<label>Email:</label>
+			<div><input type="text" /></div><br>
+			
+		</div><br>
+		<div>
+			<div>
+				<div><input type="button" value="Grabar" /></div><br>
+			</div>
+			<div>
+				<div><input type="button" value="Recuperar" /><br/>
+				<input type="button" value="Limpiar" /></div>
+			</div>
+		</div>
+		
+	</form>
+	
+<script>
+
+	function grabar () {
+		alert("grabando");
+		
+	}
+
+	function recuperar() {
+		alert("recuperando");
+		var datocontacto = JSON.parse(localStorage.getItem('contacto'));
+		cajas[0].value = datocontacto.nombre;
+		cajas[1].value = datocontacto.Apellidos;
+		cajas[2].value = datocontacto.email;
+	}
+
+	function limpiar() {
+		localStorage.clear();
+	}
+
+	function inicializar() {
+		alert("iniciando");
+		cajas = document.getElementByTagName('input');
+		alert(cajas.length);
+		for (i = 3; i < cajas.length; i++) {
+			if (i == 3) {
+				cajas[i].addEventListener("click", grabar, false);
+			}
+			if (i == 4) {
+				cajas[i].addEventListener("click", grabar, false);
+			}
+			if (i == 5) {
+				cajas[i].addEventListener("click", grabar, false);
+			}
+		}
+	}
+	document.addEventListener("DOMContentLoaded", recuperar, false);
+	document.addEventListener("DOMContentLoaded", grabar, false);
+	document.addEventListener("DOMContentLoaded", inicializar, false);
+</script>
+</body>
+</html>

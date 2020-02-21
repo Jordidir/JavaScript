@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM EJERCICIO</title>
+	<script type="text/javascript">
+		function cambiar() {
+			var cabecera = document.createElement("h1");
+			var textoCabecera = document.createTextNode("Cabecera2");
+			cabecera.appendChild(textoCabecera);
+			
+			
+			var parrafo1 = document.createElement("p");
+			var texto1 = document.createTextNode("Este es el primer parrafo");
+			parrafo1.appendChild(texto1);
+
+			var parrafo2 = document.createElement("p");
+			var texto2 = document.createTextNode("Este es el segundo parrafo");
+			parrafo2.appendChild(texto2);
+
+			var boton = document.getElementsByTagName("button");
+			document.body.insertBefore(cabecera, boton.nextSibling);
+			document.body.insertBefore(parrafo1, boton.nextSibling);
+			document.body.insertBefore(parrafo2, boton.nextSibling);
+		}	
+		function borrar() {
+			var ultimo = elemento.remove.lastChild(child);
+		}	
+	</script>
+</head>
+<body>
+
+	<button onclick='cambiar();'>Cambia este documento</button>
+	<button onclick='borrar();'>Borrar ultimo elemento</button>
+</body>
+</html>

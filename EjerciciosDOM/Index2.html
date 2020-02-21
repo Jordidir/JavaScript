@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio 3 del 5 Marzo</title>
+		<script type="text/javascript">
+			function recuperar() {
+				if (sessionStorage.visita) {
+					var ruta = sessionStorage.getItem("visita");
+					document.getElementById("info").value = ruta;
+					document.getElementById("imagen").src = ruta + ".jpg";
+				}
+			}
+		</script>
+	</head>
+	<body onload="recuperar()">
+		<p align="center"> Ficha resumen de las opciones elegidas</p>
+		<p align="center">
+		<img id="imagen" src=""><br><br>
+		Ruta Elegida: <input type="textbox" id="info" value=""></input>
+		</p> 
+	</body>
+</html>

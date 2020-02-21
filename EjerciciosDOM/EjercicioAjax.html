@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>EjercicioAjax</title>
+	<script type="text/javascript" charset="UTF-8">
+
+		function inicializar() {
+			
+		}
+
+		function comprobarDisponibilidad() {
+			var usuario = document.getElementById('usuario').value;
+			peticion_http = inicializar();
+			if (peticion_http) {
+				peticion_http.onreadystatechange = ordenFinal;
+				peticion_http.open("POST", "EjercicioAjax.php", true);
+			}
+		}
+
+		function ordenFinal() {
+			if (peticion_http.readyState == READYSTATE_COMPLETE) {
+
+			}
+		}
+		window.onload = function() {
+			document.getElementById('comprobarDisponibilidad').onclick = comprobarDisponibilidad;
+		}
+	</script>
+</head>
+<body>
+	<h1>Comprobar disponibilidad del login</h1>
+	<form>
+		<label for="login">Nombre de usuario:</label>
+		<input type="text" name="login" id="login" />
+		<a id="comprobar" href="#">Comprobar disponibilidad...</a>
+	</form>
+	<br><br>
+	<p id="posibles"></p>
+
+	<div id="disponibilidad">
+	</div>
+</body>
+</html>

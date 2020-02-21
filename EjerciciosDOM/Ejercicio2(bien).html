@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adios</title>
+	<script type="text/javascript">
+		function cambio() {
+			var campo1 = document.getElementById("Nombre");
+			campo1.addEventListener('keypress', mostrar);
+			var campo2 = document.getElementById("Apellidos");
+			campo2.addEventListener('keypress', Transmision);
+		}
+		function mostrar(evento) {
+			var campo2 = document.getElementById("Apellidos");
+			if (evento.keyCode == "13") {
+				campo2.focus();
+			}
+		}
+		function Transmision(evento) {
+			if (evento.keyCode == "13") {
+				alert("Iniciando transmision");
+			}
+		}
+		document.addEventListener('readystatechange', cambio, false);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
